@@ -3,9 +3,6 @@ package oops;
 public class Polymorphism {
 
     public int add(int a, int b){
-
-        a = 7;
-
         return a+b;
     }
 
@@ -50,9 +47,9 @@ public class Polymorphism {
         Mammals m = new Mammals(4.5f, 71);
         p.execute(m);
         System.out.println("height = "+m.getHeight());
-//        System.out.println("3.2f+5.1 = "+p.add(3.2f,5.1));
-//        System.out.println("3.5d+5 = "+p.add(3.5d,5));
-//        System.out.println("3l+5 = "+p.add(3l,5));
+        System.out.println("3.2f+5.1 = "+p.add(3.2f,5.1));
+        System.out.println("3.5d+5 = "+p.add(3.5d,5));
+        System.out.println("3l+5 = "+p.add(3l,5));
         //System.out.println("3+5+7 = "+p.add(3,5.1f, 7.2f, 12.3f, 15.2f));
     }
 

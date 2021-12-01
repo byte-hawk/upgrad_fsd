@@ -9,7 +9,7 @@ public class Human extends Mammals {
     }
 
     public void walk(){
-        System.out.println("Human can walk");
+        System.out.println("Humans can walk");
     }
 
     public void drive(){
