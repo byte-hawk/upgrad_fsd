@@ -3,6 +3,7 @@ package oops;
 public class Polymorphism {
 
     public int add(int a, int b){
+        a = 7;
         return a+b;
     }
 

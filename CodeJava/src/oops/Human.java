@@ -5,6 +5,7 @@ public class Human extends Mammals {
     public Human(float height, float weight) {
         super(height, weight);
 
+        haveVertebra = false;
         this.height = 5;
     }
 
@@ -16,3 +17,9 @@ public class Human extends Mammals {
         System.out.println("Humans can drive.");
     }
 }
+
+// Human isA Mammal
+// Human isA Vertebrate
+
+// Java allows single inheritance, multi-level inheritance,
+// but it doesn't allow Multiple inheritance
