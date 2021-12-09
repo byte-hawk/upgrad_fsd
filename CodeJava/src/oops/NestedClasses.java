@@ -44,6 +44,7 @@ public class NestedClasses {
     public void test2(InnerClass ns2){
         System.out.println("j : " + ns2.j);
 
+
         class LocalClass {
             int k = h;
 

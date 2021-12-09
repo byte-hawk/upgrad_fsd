@@ -4,9 +4,14 @@ public class NestedClassTester {
 
     public static void main(String[] args){
         NestedClasses.StaticNestedClass snc = new NestedClasses.StaticNestedClass();
+
         System.out.println(snc.i);
         NestedClasses ns = new NestedClasses();
-        //NestedClasses.NestedClass2 ns2 = ns.new NestedClass2();
+
+        NestedClasses.InnerClass ns2 = ns.new InnerClass();
+        NestedClasses.InnerClass ns3 = ns.new InnerClass();
+
+
     }
 }
 
