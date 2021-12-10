@@ -1,10 +1,11 @@
 package oops;
 
-public class Mammals {
+public class Mammals extends Vertebrate implements Flyable{
     public float height;
     private float weight;
 
     public Mammals(float height, float weight) {
+        super();
         this.height = height;
         this.weight = weight;
     }
@@ -25,11 +26,17 @@ public class Mammals {
         this.weight = weight;
     }
 
+
     public void walk(){
         System.out.println("Mammals walks");
     }
 
-    public void eat(){
-        System.out.println("Mammals will eat");
+    public void eat(String food){
+        System.out.println("Mammal is eating "+food);
     }
+
+    public void fly() {
+        System.out.println("Can't Fly");
+    }
+
 }

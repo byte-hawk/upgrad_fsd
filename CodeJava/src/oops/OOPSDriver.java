@@ -13,14 +13,14 @@ public class OOPSDriver {
         System.out.println("Height of Elephant : "+ e.getHeight());
 
         m.walk();
-        m.eat();
+        m.eat("Rice");
 
         h.walk();
         h.drive();
-        h.eat();
+        h.eat("Pizza");
 
         e.walk();
-        e.eat();
+        e.eat("Grass");
 
     }
 }
