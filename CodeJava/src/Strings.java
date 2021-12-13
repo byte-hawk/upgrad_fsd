@@ -21,5 +21,8 @@ public class Strings {
 
         System.out.println(i);
         System.out.println(numString);
+
+        int m = 7;
+        String result = (m % 2 == 1)? "Odd": "Even";
     }
 }

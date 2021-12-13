@@ -10,7 +10,7 @@ public class Product {
     public String name;
     public Seller seller;
 
-    private static Product instance = new Product();
+    private static Product instance;
 
     static int counter = 0;
     static String name2;
@@ -45,6 +45,12 @@ public class Product {
     private Product(){}
 
     public static Product getInstance(){
+        if( instance == null){
+            instance = new Product();
+        }
+
+        // Pro-active
+        // Re-active
         return instance;
     }
 
