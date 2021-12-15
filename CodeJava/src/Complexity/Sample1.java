@@ -21,13 +21,13 @@ public class Sample1 {
         }
         long time2 = System.currentTimeMillis();
         System.out.println("Time Taken : "+(time2-time1));
+*/
+        System.out.println("-------------");
+        System.out.println(Math.sqrt(1000));
 
         System.out.println("-------------");
-        System.out.println(Math.sqrt(100));
-
-        System.out.println("-------------");
-        System.out.println(Math.log(100));
-        */
+        System.out.println(Math.log(1000));
+        /*
 
         // O(n+n) = O(2n) = O(n)
         for(int i=1; i<=10; i++){
@@ -36,6 +36,6 @@ public class Sample1 {
 
         for(int j=1; j<=10; j++){
 
-        }
+        }*/
     }
 }

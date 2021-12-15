@@ -6,11 +6,11 @@ public class Array1 {
         int[] arr = { 12, 14, 67, 34, -2, 9, 75, 51, 23, -5, 71};
 
         int[] arr1 = {-11, -5, -7, -4, -190, -4, -6};
-        System.out.println(getMaxNum(arr));
+        System.out.println(getSecondMaximumNum(arr));
     }
 
     // Get the second maximum number in an array
-    public static int getMaxNum(int[] arr) {
+    public static int getSecondMaximumNum(int[] arr) {
         int max = Integer.MIN_VALUE,
                 secondMax = Integer.MIN_VALUE;
 
