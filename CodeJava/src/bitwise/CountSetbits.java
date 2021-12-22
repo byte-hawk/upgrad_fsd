@@ -3,7 +3,8 @@ package bitwise;
 public class CountSetbits {
 
     public static void main(String[] args){
-        System.out.println("Set bit count : "+getSetBitCount(12)); // 15 = 1111
+        System.out.println("Set bit count : "+getSetBitCount(36));
+        System.out.println("Set bit count2 : "+getSetBitCountOptimized(36)); // 15 = 1111
     }
 
     public static int getSetBitCount(int n){
@@ -15,6 +16,17 @@ public class CountSetbits {
             }
             pow <<= 1;
         }
+        return count;
+    }
+
+
+    public static int getSetBitCountOptimized(int n){
+        int count = 0;
+        while(n > 0){
+            n = n & (n-1);
+            count++;
+        }
+
         return count;
     }
 }
