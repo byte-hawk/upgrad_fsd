@@ -37,5 +37,4 @@ public class MergeSortedArrays {
 
         return res;
     }
-
 }
