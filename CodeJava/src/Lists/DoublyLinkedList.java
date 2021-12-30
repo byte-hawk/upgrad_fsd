@@ -1,26 +1,29 @@
 package Lists;
 
-public class SinglyLinkedList {
+public class DoublyLinkedList {
 
-    public Node head;
+    private Node head;
+    private Node tail;
 
     class Node{
         int val;
         Node next;
+        Node prev;
 
         Node(int val){
             this.val = val;
             next = null;
+            prev = null;
         }
     }
 
-    public SinglyLinkedList(){
+    public DoublyLinkedList(){
          this.head = null;
+         this.tail = null;
     }
 
-    // Time Complexity: O(n)
-    // Return the head node's reference of the list
-    public Node append(int val){
+    // Time Complexity: O(1)
+    public void append(int val){
          // Create a new node
         Node newNode = new Node(val);
 
@@ -29,16 +32,11 @@ public class SinglyLinkedList {
             head = newNode;
         }
         else{
-            // Get the last node
-            Node temp = head;
-            while(temp.next != null){
-                temp = temp.next;
-            }
-            // Update last node's next pointer to the new node
-            temp.next = newNode;
+            tail.next = newNode;
+            newNode.prev = tail;
         }
 
-        return head;
+        tail = newNode;
     }
 
     // Time complexity: O(n)
@@ -55,25 +53,20 @@ public class SinglyLinkedList {
         System.out.println();
     }
 
-    // Time complexity: O(n)
-    public Node deleteFromEnd() throws Exception {
+    // Time complexity: O(1)
+    public void deleteFromEnd() throws Exception {
         if(head == null){
             throw new Exception("List is already empty");
         }
         if(head.next == null){
             head = null;
+            tail = null;
         }
         else{
-            // Get the second last node
-            Node temp = head;
-            while(temp.next.next != null){
-                temp = temp.next;
-            }
-            // update the next pointer of second last element to null
-            temp.next = null;
+            Node secondLastNode = tail.prev;
+            secondLastNode.next = null;
+            tail = secondLastNode;
         }
-
-        return head;
     }
 
     // Time complexity: O(1)
@@ -88,17 +81,27 @@ public class SinglyLinkedList {
             System.out.println("Invalid");
         } else if (pos == 1) {
             newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
         } else {
-            Node temp = head;
-            Node previous = null;
+            Node temp = head, previous = null;
             int i = 1;
             while (i < pos) {
                 previous = temp;
                 temp = temp.next;
                 i++;
             }
+
             previous.next = newNode;
+            newNode.prev = previous;
+
             newNode.next = temp;
+            if(temp != null) {
+                temp.prev = newNode;
+            }
+            else{
+                tail = newNode;
+            }
         }
     }
 }
