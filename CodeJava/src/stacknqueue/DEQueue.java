@@ -21,8 +21,9 @@ public class DEQueue {
         elements.add(data);
     }
 
+    // Time Complexity: O(1)
     public void prepend(int data){
-        
+        elements.add(0,data);
     }
 
     // Time Complexity: O(1)
@@ -35,7 +36,14 @@ public class DEQueue {
         return front;
     }
 
-    public int deleteFromEnd(){
+    // Time Complexity: O(1)
+    public int deleteFromEnd() throws Exception {
+        if(isEmpty()){
+            throw new Exception("Queue is already empty!");
+        }
 
+        int rear = elements.get(elements.size()-1);
+        elements.remove(elements.size()-1);
+        return rear;
     }
 }
