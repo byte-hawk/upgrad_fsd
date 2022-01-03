@@ -1,10 +1,8 @@
 package Lists;
 
-public class SinglyLinkedList {
+public class SinglyLinkedList2 {
 
-    public Node head;
-
-    class Node{
+    static class Node{
         int val;
         Node next;
 
@@ -14,13 +12,9 @@ public class SinglyLinkedList {
         }
     }
 
-    public SinglyLinkedList(){
-         this.head = null;
-    }
-
     // Time Complexity: O(n)
     // Return the head node's reference of the list
-    public Node append(int val){
+    public static Node append(Node head, int val){
          // Create a new node
         Node newNode = new Node(val);
 
@@ -43,7 +37,7 @@ public class SinglyLinkedList {
 
     // Time complexity: O(n)
     // Traverse the list and print each element in the order
-    public void printList(){
+    public static void printList(Node head){
         // Traverse the list
         Node temp = head;
         if(head != null) {
@@ -56,7 +50,7 @@ public class SinglyLinkedList {
     }
 
     // Time complexity: O(n)
-    public Node deleteFromEnd() throws Exception {
+    public static Node deleteFromEnd(Node head) throws Exception {
         if(head == null){
             throw new Exception("List is already empty");
         }
@@ -77,11 +71,11 @@ public class SinglyLinkedList {
     }
 
     // Time complexity: O(1)
-    public boolean isEmpty(){
+    public boolean isEmpty(Node head){
         return head == null;
     }
 
-    public void insertAtPos(int data, int pos) {
+    public static void insertAtPos(Node head, int data, int pos) {
 
         Node newNode = new Node(data);
         if (pos < 1) {
@@ -100,5 +94,16 @@ public class SinglyLinkedList {
             previous.next = newNode;
             newNode.next = temp;
         }
+    }
+
+    public static void main(String[] args){
+        Node head = null;
+
+        head = append(head, 2);
+        head = append(head, 23);
+        head = append(head, 9);
+        head = append(head, 17);
+
+        printList(head);
     }
 }
